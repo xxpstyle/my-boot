@@ -1,0 +1,43 @@
+
+spring:
+  application:
+    name: myspringboot
+  output:
+    ansi:
+      enabled: always
+  profiles:
+    active: dev
+  thymeleaf:
+    encoding: UTF-8
+    prefix: classpath:/templates/
+
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-connections: 500
+    min-spare-threads: 25
+    max-threads: 300
+    accept-count: 200
+  port: 8086
+mybatis:
+  type-aliases-package: com.example.dao
+  mapper-locations: classpath:mapper/*.xml
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+logging:
+  level:
+    com.zb.mapper: debug
+
+---
+
+#ø™∑¢≈‰÷√
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/abc?serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
